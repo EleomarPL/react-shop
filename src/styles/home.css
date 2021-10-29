@@ -9,3 +9,13 @@
   border: none;
   background-color: transparent;
 }
+.load-more-button{
+  display: flex;
+  align-items: center;
+  
+  padding: 5px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #44dddd;
+}
