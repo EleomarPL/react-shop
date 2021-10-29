@@ -6,6 +6,9 @@ import { ShoppingCartProvider } from './contexts/ShoppingCart';
 import PublicRoute from './components/router/PublicRouter';
 import PrivateRouter from './components/router/PrivateRouter';
 import Header from './components/Header';
+import Index from './pages/Index';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,8 +17,6 @@ import '@fontsource/roboto';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './styles/index.css';
-import Index from './pages/Index';
-import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
                 <Login />
               </PublicRoute>
               <PublicRoute exact path="/register">
-                <p>Register</p>
+                <Register />
               </PublicRoute>
               <PrivateRouter exact path="/home">
                 <p>Home</p>
