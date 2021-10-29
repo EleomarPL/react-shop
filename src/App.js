@@ -1,15 +1,18 @@
 import {BrowserRouter, Switch} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
+import {Suspense, lazy} from 'react';
 
 import { AuthProvider } from './contexts/Auth';
 import { ShoppingCartProvider } from './contexts/ShoppingCart';
 import PublicRoute from './components/router/PublicRouter';
 import PrivateRouter from './components/router/PrivateRouter';
+import SpinnerLoading from './components/common/SpinnerLoading';
 import Header from './components/Header';
-import Index from './pages/Index';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
+
+const Index = lazy(() => import('./pages/Index'));
+const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/Register'));
+const Home = lazy(() => import('./pages/Home'));
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,16 +31,24 @@ const App = () => {
           <main>
             <Switch>
               <PublicRoute exact path="/">
-                <Index />
+                <Suspense fallback={ <SpinnerLoading /> }>
+                  <Index />
+                </Suspense>
               </PublicRoute>
               <PublicRoute exact path="/login">
-                <Login />
+                <Suspense fallback={ <SpinnerLoading /> }>
+                  <Login />
+                </Suspense>
               </PublicRoute>
               <PublicRoute exact path="/register">
-                <Register />
+                <Suspense fallback={ <SpinnerLoading /> }>
+                  <Register />
+                </Suspense>
               </PublicRoute>
               <PrivateRouter exact path="/home">
-                <Home />
+                <Suspense fallback={ <SpinnerLoading /> }>
+                  <Home />
+                </Suspense>
               </PrivateRouter>
             </Switch>
           </main>
