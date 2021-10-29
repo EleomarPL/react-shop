@@ -1,6 +1,4 @@
-import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import useLogin from '../../hooks/useLogin';
 
 const OptionUserDropdown = ({email}) => {
