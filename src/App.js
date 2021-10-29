@@ -1,4 +1,5 @@
 import {BrowserRouter, Switch} from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
 
 import { AuthProvider } from './contexts/Auth';
 import { ShoppingCartProvider } from './contexts/ShoppingCart';
@@ -38,6 +39,12 @@ const App = () => {
               </PrivateRouter>
             </Switch>
           </main>
+          <ToastContainer position="top-right"
+            autoClose={ 5000 } hideProgressBar={ false }
+            newestOnTop={ false } closeOnClick
+            rtl={ false } pauseOnFocusLoss
+            draggable={ false } pauseOnHover
+          />
         </BrowserRouter>
       </ShoppingCartProvider>
     </AuthProvider>
