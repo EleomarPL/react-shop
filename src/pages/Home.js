@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import {useLocation} from 'react-router-dom';
 
 import ProductItem from '../components/views/ProductItem';
 import '../styles/home.css';
@@ -8,12 +9,25 @@ const Home = () => {
   const [listProducts, setListProducts] = useState([]);
   const [limit, setLimit] = useState(7);
 
+  const {search} = useLocation();
+
   useEffect(() => {
     axios.get(`https://api.escuelajs.co/api/v1/products?limit=${limit}&offset=0`).then(response => {
-      console.log(response);
-      setListProducts(response.data);
+      const data = response.data;
+      const category = search.slice(1);
+
+      if (category === '')
+        setListProducts(data);
+      else {
+        let filterByCategory = data.filter(product => product.category.name === category);
+
+        if (filterByCategory.length === 0) setLimit(limit + 5);
+        else setListProducts(filterByCategory);
+        
+      }
+
     });
-  }, [limit]);
+  }, [limit, search]);
 
   return (
     <>

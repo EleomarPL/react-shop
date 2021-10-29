@@ -23,23 +23,44 @@ const Header = () => {
             ? <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/home"
-                  activeClassName="active-header" exact
+                  exact
                 >
                   All
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/home/clothes"
-                  activeClassName="active-header"
+                <NavLink className="nav-link" to="/home?Clothes"
+                  exact
                 >
                   Clothes
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/home/electronics"
-                  activeClassName="active-header"
+                <NavLink className="nav-link" to="/home?Electronics"
+                  exact
                 >
                   Electronics
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/home?Furniture"
+                  exact
+                >
+                  Furnitures
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/home?Toys"
+                  exact
+                >
+                  Toys
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/home?Others"
+                  exact
+                >
+                  Others
                 </NavLink>
               </li>
             </ul>
