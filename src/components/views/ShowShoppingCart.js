@@ -24,7 +24,7 @@ const ShowShoppingCart = () => {
 
   return (
     <div style={ {minWidth: '30vw', maxHeight: '80vh', overflow: 'auto'} }>
-      <h3>Mis ordenesasdasd</h3>
+      <h3>Mis ordenes</h3>
       <div className="m-auto" style={ {width: '90%'} }>
         { shoppingCart &&
           shoppingCart.map( (shopping, index) =>

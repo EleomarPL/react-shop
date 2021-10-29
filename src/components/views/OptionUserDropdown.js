@@ -23,26 +23,6 @@ const OptionUserDropdown = ({email}) => {
         style={ {fontSize: '1.1rem'} }
       >
         <li><i className="bi bi-person-circle" style={ {fontSize: '2.5rem'} }></i></li>
-        <li className="pb-2">
-          <NavLink
-            to={ '/home/settings' }
-            exact
-            className="btn btn-primary w-100"
-          >
-            <i className="bi bi-gear"> </i>
-            Mis Ordenes
-          </NavLink>
-        </li>
-        <li className="pb-2">
-          <NavLink
-            to={ '/home/history' }
-            exact
-            className="btn btn-secondary w-100"
-          >
-            <i className="bi bi-clock-history"> </i>
-            Mi cuenta
-          </NavLink>
-        </li>
         <li><hr className="dropdown-divider" /></li>
         <li>
           <button
