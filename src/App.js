@@ -13,6 +13,7 @@ import '@fontsource/roboto';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './styles/index.css';
+import Index from './pages/Index';
 
 const App = () => {
   return (
@@ -20,20 +21,22 @@ const App = () => {
       <ShoppingCartProvider>
         <BrowserRouter>
           <Header />
-          <Switch>
-            <PublicRoute exact path="/">
-              <p>Introduction</p>
-            </PublicRoute>
-            <PublicRoute exact path="/login">
-              <p>Login</p>
-            </PublicRoute>
-            <PublicRoute exact path="/register">
-              <p>Register</p>
-            </PublicRoute>
-            <PrivateRouter exact path="/home">
-              <p>Home</p>
-            </PrivateRouter>
-          </Switch>
+          <main>
+            <Switch>
+              <PublicRoute exact path="/">
+                <Index />
+              </PublicRoute>
+              <PublicRoute exact path="/login">
+                <p>Login</p>
+              </PublicRoute>
+              <PublicRoute exact path="/register">
+                <p>Register</p>
+              </PublicRoute>
+              <PrivateRouter exact path="/home">
+                <p>Home</p>
+              </PrivateRouter>
+            </Switch>
+          </main>
         </BrowserRouter>
       </ShoppingCartProvider>
     </AuthProvider>
