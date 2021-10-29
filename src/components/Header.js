@@ -22,8 +22,8 @@ const Header = () => {
           { userData !== null
             ? <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/home/all"
-                  activeClassName="active-header"
+                <NavLink className="nav-link" to="/home"
+                  activeClassName="active-header" exact
                 >
                   All
                 </NavLink>

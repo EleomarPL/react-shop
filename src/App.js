@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Index from './pages/Index';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Home from './pages/Home';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,7 +37,7 @@ const App = () => {
                 <Register />
               </PublicRoute>
               <PrivateRouter exact path="/home">
-                <p>Home</p>
+                <Home />
               </PrivateRouter>
             </Switch>
           </main>

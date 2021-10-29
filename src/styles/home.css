@@ -1,0 +1,11 @@
+.container-cards{
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-auto-columns: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+.button-add-card{
+  border: none;
+  background-color: transparent;
+}
