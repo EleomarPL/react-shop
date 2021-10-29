@@ -1,9 +1,10 @@
 import {BrowserRouter, Switch} from 'react-router-dom';
 
-
 import { AuthProvider } from './contexts/Auth';
 import { ShoppingCartProvider } from './contexts/ShoppingCart';
-
+import PublicRoute from './components/router/PublicRouter';
+import PrivateRouter from './components/router/PrivateRouter';
+import Header from './components/Header';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,14 +13,13 @@ import '@fontsource/roboto';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './styles/index.css';
-import PublicRoute from './components/router/PublicRouter';
-import PrivateRouter from './components/router/PrivateRouter';
 
 const App = () => {
   return (
     <AuthProvider>
       <ShoppingCartProvider>
         <BrowserRouter>
+          <Header />
           <Switch>
             <PublicRoute exact path="/">
               <p>Introduction</p>
