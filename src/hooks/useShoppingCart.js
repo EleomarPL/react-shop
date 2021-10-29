@@ -16,9 +16,17 @@ const useShoppingCart = () => {
 
     notifySuccess('Agregado al carrito');
   };
+  const deleteProductFromCart = (id) => {
+    const updateShoppingCart = shoppingCart.filter(product => product.id !== id);
+
+    setShoppingCart(updateShoppingCart);
+    window.localStorage.setItem('shoppingCart', JSON.stringify(updateShoppingCart));
+
+    notifySuccess('Producto Eliminado');
+  };
 
   return {
-    addProductToCart
+    addProductToCart, deleteProductFromCart
   };
 };
 

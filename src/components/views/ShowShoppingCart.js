@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
+
 import ShoppingCart from '../../contexts/ShoppingCart';
+import useShoppingCart from '../../hooks/useShoppingCart';
 
 import '../../styles/shoppingCart.css';
 
 const ShowShoppingCart = () => {
   const [totalShopping, setTotalShopping] = useState(0);
   const {shoppingCart} = useContext(ShoppingCart);
+  const {deleteProductFromCart} = useShoppingCart();
 
   useEffect(() => {
     setTotalShopping(
@@ -16,7 +19,7 @@ const ShowShoppingCart = () => {
   }, [shoppingCart]);
 
   const handleDeleteProductFromShoppingCart = (dataProduct) => {
-    console.log(dataProduct);
+    deleteProductFromCart(dataProduct.id);
   };
 
   return (
