@@ -9,7 +9,9 @@ import OptionUserDropdown from './views/OptionUserDropdown';
 const Header = () => {
   const {userData} = useContext(AuthContext);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+      style={ {borderBottom: '1px solid #C7C7C7'} }
+    >
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img src={ require('../img/logo.svg').default } />
@@ -89,7 +91,7 @@ const Header = () => {
                 <NavLink className="nav-link" to="/login"
                   activeClassName="active-header"
                 >
-                  Login
+                  Iniciar Sesión
                 </NavLink>
               </li>
             </ul>
