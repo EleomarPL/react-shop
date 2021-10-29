@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import { notifyWarning } from '../const/notifications';
+import useLogin from '../hooks/useLogin';
 
 import '../styles/login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const {login} = useLogin();
 
   const handleLogin = () => {
-    console.log({username, password});
+    if (!(password && username))
+      notifyWarning('Rellene todos los campos');
+    else
+      login({username, password});
   };
 
   return (

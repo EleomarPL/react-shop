@@ -7,9 +7,8 @@ import Auth from '../../contexts/Auth';
 const PrivateRouter = ({children}, props) => {
   const {userData} = useContext(Auth);
   let isLogged = userData === null ? false : true;
-
   if (isLogged) {
-    <Route { ...props }>{ children }</Route>;
+    return <Route { ...props }>{ children }</Route>;
   } else {
     return <Redirect to="/login" />;
   }
