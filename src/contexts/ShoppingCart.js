@@ -6,7 +6,7 @@ const ShoppingCart = createContext({});
 export const ShoppingCartProvider = ({ children }) => {
 
   const [shoppingCart, setShoppingCart] =
-    useState(JSON.parse(window.localStorage.getItem('shoppingCart')));
+    useState(JSON.parse(window.localStorage.getItem('shoppingCart')) || []);
   return (
     <ShoppingCart.Provider value={ { shoppingCart, setShoppingCart } }>
       { children }
