@@ -14,9 +14,13 @@ const useLogin = () => {
     } else
       notifyInfo('Usuario y/o contraseña no validos');
   };
+  const logout = () => {
+    setUserData(null);
+    window.localStorage.removeItem('datauser');
+  };
 
   return {
-    login
+    login, logout
   };
 };
 
