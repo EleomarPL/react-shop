@@ -1,0 +1,22 @@
+.container-list {
+  display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+.button-delete-product{
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.box-show-total{
+  background-color: #F7F7F7;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: space-around;
+}

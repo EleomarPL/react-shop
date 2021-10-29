@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import AuthContext from '../contexts/Auth';
+import ShowShoppingCart from './views/ShowShoppingCart';
 
 const Header = () => {
   const {userData} = useContext(AuthContext);
@@ -161,11 +162,11 @@ const OptionUserLogged = ({email}) => {
           <i style={ {fontSize: '1.5rem'} } className="bi bi-cart-fill"></i>
         </button>
         <ul
-          className="dropdown-menu dropdown-menu-lg-end text-center px-3"
+          className="dropdown-menu dropdown-menu-lg-end text-center w-auto"
           aria-labelledby="dropdownMenuButton"
           style={ {fontSize: '1.1rem'} }
         >
-          <p>Dashboard</p>
+          <ShowShoppingCart />
         </ul>
       </div>
     </>
