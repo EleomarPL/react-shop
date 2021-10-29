@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {useLocation} from 'react-router-dom';
+import SpinnerLoading from '../components/common/SpinnerLoading';
 
 import ProductItem from '../components/views/ProductItem';
 import '../styles/home.css';
@@ -8,11 +9,14 @@ import '../styles/home.css';
 const Home = () => {
   const [listProducts, setListProducts] = useState([]);
   const [limit, setLimit] = useState(7);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {search} = useLocation();
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get(`https://api.escuelajs.co/api/v1/products?limit=${limit}&offset=0`).then(response => {
+      setIsLoading(false);
       const data = response.data;
       const category = search.slice(1);
 
@@ -38,9 +42,12 @@ const Home = () => {
           )
         }
       </section>
+      { isLoading &&
+        <SpinnerLoading />
+      }
       <div className="d-flex justify-content-center mb-2">
         <button type="button" className="load-more-button"
-          onClick={ () => setLimit(limit + 5) }
+          onClick={ () => setLimit(limit + 5) } disabled={ isLoading }
         >
           Cargar 5 Productos Mas
           <i className="bi bi-arrow-down-circle-fill" style={ {fontSize: '1.5rem', marginLeft: '0.5rem'} }></i>
