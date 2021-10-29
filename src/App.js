@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './styles/index.css';
 import Index from './pages/Index';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
                 <Index />
               </PublicRoute>
               <PublicRoute exact path="/login">
-                <p>Login</p>
+                <Login />
               </PublicRoute>
               <PublicRoute exact path="/register">
                 <p>Register</p>

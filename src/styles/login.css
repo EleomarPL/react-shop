@@ -1,0 +1,14 @@
+.container-login{
+  background-color: rgb(248, 248, 248);
+  border-radius: 10px;
+
+  width: 50%;
+}
+
+@media screen and (max-width: 800px){
+  .container-login{ width: 70%;}
+}
+@media screen and (max-width: 600px){
+  .container-login{ width: 95%;}
+  .media-button-login{ width: 100%; }
+}
