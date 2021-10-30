@@ -16,8 +16,10 @@ const useShoppingCart = () => {
 
     notifySuccess('Agregado al carrito');
   };
-  const deleteProductFromCart = (id) => {
-    const updateShoppingCart = shoppingCart.filter(product => product.id !== id);
+  const deleteProductFromCart = (id, index) => {
+    const updateShoppingCart = shoppingCart.filter((product, thisIndex) =>
+      product.id !== id || thisIndex !== index
+    );
 
     setShoppingCart(updateShoppingCart);
     window.localStorage.setItem('shoppingCart', JSON.stringify(updateShoppingCart));

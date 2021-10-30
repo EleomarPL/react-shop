@@ -18,8 +18,8 @@ const ShowShoppingCart = () => {
     );
   }, [shoppingCart]);
 
-  const handleDeleteProductFromShoppingCart = (dataProduct) => {
-    deleteProductFromCart(dataProduct.id);
+  const handleDeleteProductFromShoppingCart = (dataProduct, index) => {
+    deleteProductFromCart(dataProduct.id, index);
   };
 
   return (
@@ -41,7 +41,7 @@ const ShowShoppingCart = () => {
               <span style={ {color: 'GrayText'} }>{ shopping.title }</span>
               <strong>${ shopping.price }</strong>
               <button type="button" className="button-delete-product"
-                onClick={ () => handleDeleteProductFromShoppingCart(shopping) }
+                onClick={ () => handleDeleteProductFromShoppingCart(shopping, index) }
               >
                 <i className="bi bi-x-circle"></i>
               </button>
